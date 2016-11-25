@@ -1,25 +1,27 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { RouterModule,Routes } from '@angular/router';
 
 import { AppComponent } from "./app.component";
 import { HerolistComponent } from './herolist/herolist.component';
 import { HeroDetailComponent} from './herodetail/hero-detail.component';
 import { HeroService } from "./hero/hero.service";
+import {DashboardComponent} from "./dashboard/dashboard.component";
+import {AppRoutingModule} from "./app-routing.module";
 
-const appRoutes: Routes = [{ path: 'herolist', component: HerolistComponent }];
+
 
 @NgModule({
     imports: [
         BrowserModule,
         FormsModule,
-        RouterModule.forRoot(appRoutes)
+        AppRoutingModule
     ],
     declarations: [
         AppComponent,
         HerolistComponent,
-        HeroDetailComponent
+        HeroDetailComponent,
+        DashboardComponent
     ],
     providers:[HeroService],
     bootstrap: [ AppComponent ]

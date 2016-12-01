@@ -3,7 +3,6 @@ import { RouterModule,Routes } from '@angular/router';
 
 import {HeroDetailComponent} from "./herodetail/hero-detail.component";
 import {DashboardComponent} from "./dashboard/dashboard.component";
-import {HerolistComponent} from "./herolist/herolist.component";
 
 
 const appRoutes: Routes = [
@@ -12,7 +11,12 @@ const appRoutes: Routes = [
         redirectTo: '/dashboard',
         pathMatch: 'full'
     },
-    { path: 'herolist', component: HerolistComponent },
+    { path: 'herolist', loadChildren: () => new Promise(resolve => {
+        (require as any).ensure([], (require: any) => {
+            resolve(require('./herolist/herolist.module').HerolistModule);
+        })
+    })
+    },
     { path: 'dashboard', component: DashboardComponent},
     {
         path:'detail/:id',

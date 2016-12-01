@@ -7,7 +7,6 @@ import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService }  from './hero/in-memory-data.service';
 
 import { AppComponent } from "./app.component";
-import { HerolistComponent } from './herolist/herolist.component';
 import { HeroDetailComponent} from './herodetail/hero-detail.component';
 import { HeroService } from "./hero/hero.service";
 import {DashboardComponent} from "./dashboard/dashboard.component";
@@ -26,7 +25,6 @@ import {HeroSearchComponent} from "./herosearch/hero-search.component";
     ],
     declarations: [
         AppComponent,
-        HerolistComponent,
         HeroDetailComponent,
         DashboardComponent,
         HeroSearchComponent

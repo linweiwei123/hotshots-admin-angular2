@@ -18,4 +18,5 @@ import '../assets/css/styles.css';
 
 export class AppComponent{
     title = '英雄帖';
+
 }

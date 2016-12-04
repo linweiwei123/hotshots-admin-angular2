@@ -1,5 +1,5 @@
 import { Component,OnInit } from '@angular/core';
-import {Router, ActivatedRoute} from '@angular/router';
+import {Router, ActivatedRoute, Params} from '@angular/router';
 
 import {Hero} from '../hero/Hero'
 import {HeroService} from "../hero/hero.service";
@@ -14,6 +14,7 @@ import {HeroService} from "../hero/hero.service";
 export class HerolistComponent implements OnInit{
 
     heroes:Hero[];
+    selectId:number;
     selectedHero:Hero;
 
     constructor(
@@ -32,6 +33,11 @@ export class HerolistComponent implements OnInit{
     }
 
     ngOnInit():void{
+        //此处可选参数失败，未知原因，还需要解决
+        // this.activatedRoute.params.switchMap((params:Params)=>{
+        //     this.selectId = +params['id'];
+        //     console.log(this.selectId);
+        // });
         this.getHeroes();
     }
 

@@ -1,9 +1,8 @@
 /**
  * Created by Administrator on 2016/11/25.
  */
-import { Component,OnInit } from '@angular/core';
-import { ActivatedRoute,Params} from '@angular/router';
-import { Location } from '@angular/common';
+import {Component, OnInit, Host, HostBinding, style, state, animate, transition, trigger} from '@angular/core';
+import {ActivatedRoute, Params, Router} from '@angular/router';
 
 import { Hero } from '../hero/Hero';
 import {HeroService} from "../hero/hero.service";
@@ -11,15 +10,44 @@ import {HeroService} from "../hero/hero.service";
 @Component({
     selector:'my-hero-detail',
     templateUrl:'hero-detail.component.html',
-    styleUrls:['hero-detail.component.css']
+    styleUrls:['hero-detail.component.css'],
+    host:{
+        '[@routeAnimation]': 'true',
+        '[style.display]': "'block'",
+        '[style.position]': "'absolute'"
+    },
+    animations: [
+        trigger('routeAnimation', [
+            state('*',
+                style({
+                    opacity: 1,
+                    transform: 'translateX(0)'
+                })
+            ),
+            transition(':enter', [
+                style({
+                    opacity: 0,
+                    transform: 'translateX(-100%)'
+                }),
+                animate('0.2s ease-in')
+            ]),
+            transition(':leave', [
+                animate('0.5s ease-out', style({
+                    opacity: 0,
+                    transform: 'translateY(100%)'
+                }))
+            ])
+        ])
+    ]
 })
 
 export class HeroDetailComponent implements OnInit{
 
+
     constructor(
         private heroService:HeroService,
         private route:ActivatedRoute,
-        private location:Location
+        private router:Router
     ){}
 
     hero:Hero;
@@ -31,7 +59,10 @@ export class HeroDetailComponent implements OnInit{
     }
 
     goBack():void{
-        this.location.back();
+        //获取父路由路径
+        let parentPath = this.route.parent.routeConfig.path;
+        let heroId = this.hero?this.hero.id:null;
+        this.router.navigate([`/${parentPath}/list`,{id:heroId,name:'name'}]);
     }
 
     save():void{

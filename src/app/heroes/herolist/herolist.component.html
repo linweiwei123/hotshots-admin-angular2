@@ -1,5 +1,5 @@
 <ul class="heroes">
-    <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
+    <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero.id ==selectId">
         <span class="badge">{{hero.id}}</span>
         <span>{{hero.name}}</span>
         <button class="delete" (click)="delete(hero);$event.stopPropagation()">x</button>

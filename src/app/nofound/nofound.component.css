@@ -1,0 +1,47 @@
+/*! Custom styles for this template */
+
+html {
+    display: table;
+    height: 100%;
+    width: 100%
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle
+}
+
+.error {
+    -webkit-animation-duration: 1s;
+    -o-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: fadeInUp;
+    -o-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 380px;
+    text-align: center
+}
+
+.error-body {
+    padding: 30px
+}
+
+.error-heading {
+    color: #2c3e50;
+    font-weight: 300;
+    margin-bottom: 30px;
+    margin-top: 30px
+}
+
+.error-subheading {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1.4;
+    margin-bottom: 30px;
+    margin-top: 30px
+}

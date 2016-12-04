@@ -52,4 +52,13 @@ button.delete {
     margin-right: .8em;
     background-color: gray !important;
     color:white;
+
+}
+
+*{
+    box-sizing: content-box;
+}
+.heroes>li{
+    color: #fff;
+    height: 2.2em;
 }

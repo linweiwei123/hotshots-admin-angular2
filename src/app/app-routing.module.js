@@ -10,7 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var hero_detail_component_1 = require("./herodetail/hero-detail.component");
+var hero_detail_component_1 = require("./heroes/herodetail/hero-detail.component");
 var dashboard_component_1 = require("./dashboard/dashboard.component");
 var appRoutes = [
     {

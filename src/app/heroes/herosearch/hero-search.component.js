@@ -15,7 +15,7 @@ var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var Observable_1 = require('rxjs/Observable');
 var Subject_1 = require('rxjs/Subject');
-var hero_service_1 = require('../hero/hero.service');
+var hero_service_1 = require('./hero.service');
 var HeroSearchComponent = (function () {
     function HeroSearchComponent(heroService, router) {
         this.heroService = heroService;
@@ -53,8 +53,8 @@ var HeroSearchComponent = (function () {
     HeroSearchComponent = __decorate([
         core_1.Component({
             selector: 'hero-search',
-            templateUrl: './hero-search.component.html',
-            styleUrls: ['./hero-search.component.css'],
+            templateUrl: 'hero-search.component.html',
+            styleUrls: ['hero-search.component.css'],
             providers: [hero_service_1.HeroService]
         }), 
         __metadata('design:paramtypes', [hero_service_1.HeroService, router_1.Router])

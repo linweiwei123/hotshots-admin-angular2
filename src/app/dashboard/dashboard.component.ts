@@ -2,8 +2,8 @@
  * Created by yitala on 2016/11/25.
  */
 import { Component ,OnInit} from '@angular/core';
-import {Hero} from "../hero/Hero";
-import {HeroService} from "../hero/hero.service";
+import {Hero} from "../heroes/hero/Hero";
+import {HeroService} from "../heroes/hero/hero.service";
 
 @Component({
     selector:'my-dashboard',

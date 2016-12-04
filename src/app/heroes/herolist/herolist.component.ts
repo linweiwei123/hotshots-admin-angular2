@@ -1,5 +1,5 @@
 import { Component,OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import {Router, ActivatedRoute} from '@angular/router';
 
 import {Hero} from '../hero/Hero'
 import {HeroService} from "../hero/hero.service";
@@ -7,8 +7,8 @@ import {HeroService} from "../hero/hero.service";
 
 @Component({
     selector: 'my-heroes',
-    templateUrl:'./herolist.component.html',
-    styleUrls:['./herolist.component.css']
+    templateUrl:'herolist.component.html',
+    styleUrls:['herolist.component.css']
 })
 
 export class HerolistComponent implements OnInit{
@@ -19,6 +19,7 @@ export class HerolistComponent implements OnInit{
     constructor(
         private heroService:HeroService,
         private router:Router,
+        private activatedRoute:ActivatedRoute
     ){}
 
     getHeroes():void{
@@ -35,7 +36,10 @@ export class HerolistComponent implements OnInit{
     }
 
     gotoDetail():void{
-        this.router.navigate(['/detail',this.selectedHero.id]);
+        console.log(this.activatedRoute);
+        //因为本级是第二级的导航，所以要获取上级的url path
+        let parentPath = this.activatedRoute.parent.routeConfig.path;
+        this.router.navigate([`/${parentPath}/heroDetail`,this.selectedHero.id]);
     }
 
     add(name:string):void{

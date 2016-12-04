@@ -72,8 +72,11 @@ module.exports = {
                 loader: 'html'
             },
             {
-                test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
-                loader: 'file?name=assets/[name].[hash].[ext]'
+                test: /\.(png|jpe?g|gif|svg)$/,
+                loader: 'file?name=assets/img/[name].[hash].[ext]'
+            },      {
+                test: /\.(woff|woff2|ttf|eot|ico)$/,
+                loader: 'file?name=assets/fonts/[name].[hash].[ext]'
             },
             /**
              * app外的全部抽到应用级样式文件中

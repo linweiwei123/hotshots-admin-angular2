@@ -13,7 +13,9 @@ import {DashboardComponent} from "./dashboard/dashboard.component";
 import {AppRoutingModule} from "./app-routing.module";
 import './rxjs-extensions';
 import {HeroSearchComponent} from "./herosearch/hero-search.component";
-
+import '../assets/css/styles.css';
+import {SharedModule} from "./shared/shared.module";
+import {SidernavComponent} from "./shared/layout/sidernav/sidernav.component";
 
 @NgModule({
     imports: [
@@ -21,13 +23,15 @@ import {HeroSearchComponent} from "./herosearch/hero-search.component";
         FormsModule,
         HttpModule,
         InMemoryWebApiModule.forRoot(InMemoryDataService),
-        AppRoutingModule
+        AppRoutingModule,
+        SharedModule
     ],
     declarations: [
         AppComponent,
         HeroDetailComponent,
         DashboardComponent,
-        HeroSearchComponent
+        HeroSearchComponent,
+        SidernavComponent
     ],
     providers:[HeroService],
     bootstrap: [ AppComponent ]

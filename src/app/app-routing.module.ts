@@ -11,11 +11,13 @@ const appRoutes: Routes = [
         redirectTo: '/dashboard',
         pathMatch: 'full'
     },
-    { path: 'herolist', loadChildren: () => new Promise(resolve => {
-        (require as any).ensure([], (require: any) => {
-            resolve(require('./herolist/herolist.module').HerolistModule);
-        })
-    })
+    // { path: 'herolist', loadChildren: () => new Promise(resolve => {
+    //     (require as any).ensure([], (require: any) => {
+    //         resolve(require('./herolist/herolist.module').HerolistModule);
+    //     })
+    // })
+    {
+     path:'herolist',loadChildren:'./herolist/herolist.module#HerolistModule'
     },
     { path: 'dashboard', component: DashboardComponent},
     {

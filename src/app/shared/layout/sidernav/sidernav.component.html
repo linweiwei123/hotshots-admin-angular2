@@ -14,23 +14,29 @@
                             </div>
                         </form>
                     </li>
-                    <li class="sidenav-heading">Navigation</li>
-                    <li class="sidenav-item has-subnav active">
-                        <!--1 routerLinkActive 传递单个值-->
-                        <a routerLink="/heroes" routerLinkActive="active">
-                            <span class="sidenav-icon icon icon-home"></span>
-                            <span class="sidenav-label">heroes</span>
-                        </a>
-
-                    </li>
+                    <li class="sidenav-heading">模块与导航</li>
                     <li class="sidenav-item">
                         <!--2 routerLinkActive 可以如下传递多个css值-->
                         <a routerLink="/dashboard" [routerLinkActive]="['active','somevalue']">
                             <span class="badge badge-success">26</span>
-                            <span class="sidenav-icon icon icon-th"></span>
+                            <span class="sidenav-icon icon icon-home"></span>
                             <span class="sidenav-label">dashboard</span>
                         </a>
                     </li>
+                    <li class="sidenav-item has-subnav active">
+                        <!--1 routerLinkActive 传递单个值-->
+                        <a routerLink="/heroes" routerLinkActive="active">
+                            <span class="sidenav-icon icon icon-th"></span>
+                            <span class="sidenav-label">特性模块</span>
+                        </a>
+                    </li>
+                    <li class="sidenav-item has-subnav active">
+                        <a routerLink="/relativeRoute" routerLinkActive="active">
+                            <span class="sidenav-icon icon icon-th"></span>
+                            <span class="sidenav-label">相对路由</span>
+                        </a>
+                    </li>
+
                     <li class="sidenav-item">
                         <a routerLink="/404" routerLinkActive="active" >
                             <span class="sidenav-icon icon icon-columns"></span>

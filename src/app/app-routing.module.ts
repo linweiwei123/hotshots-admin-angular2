@@ -11,6 +11,9 @@ const appRoutes: Routes = [
     },
     {   path: 'dashboard', component: DashboardComponent},
     {
+        path:'relativeRoute',loadChildren:'./relativeroute/relative-route.module#RelativeRouteModule'
+    },
+    {
         path: '',
         redirectTo: '/dashboard',
         pathMatch: 'full'

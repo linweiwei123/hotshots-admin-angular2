@@ -15,13 +15,14 @@ var http_1 = require('@angular/http');
 var angular_in_memory_web_api_1 = require('angular-in-memory-web-api');
 var in_memory_data_service_1 = require('./heroes/hero/in-memory-data.service');
 var app_component_1 = require("./app.component");
-var hero_detail_component_1 = require('./heroes/herodetail/hero-detail.component');
 var hero_service_1 = require("./heroes/hero/hero.service");
 var dashboard_component_1 = require("./dashboard/dashboard.component");
 var app_routing_module_1 = require("./app-routing.module");
 require('./rxjs-extensions');
 var hero_search_component_1 = require("./heroes/herosearch/hero-search.component");
 require('../assets/css/styles.css');
+var shared_module_1 = require("./shared/shared.module");
+var sidernav_component_1 = require("./shared/layout/sidernav/sidernav.component");
 var AppModule = (function () {
     function AppModule() {
     }
@@ -33,13 +34,13 @@ var AppModule = (function () {
                 http_1.HttpModule,
                 angular_in_memory_web_api_1.InMemoryWebApiModule.forRoot(in_memory_data_service_1.InMemoryDataService),
                 app_routing_module_1.AppRoutingModule,
-                H
+                shared_module_1.SharedModule
             ],
             declarations: [
                 app_component_1.AppComponent,
-                hero_detail_component_1.HeroDetailComponent,
                 dashboard_component_1.DashboardComponent,
-                hero_search_component_1.HeroSearchComponent
+                hero_search_component_1.HeroSearchComponent,
+                sidernav_component_1.SidernavComponent
             ],
             providers: [hero_service_1.HeroService],
             bootstrap: [app_component_1.AppComponent]

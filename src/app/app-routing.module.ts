@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule,Routes } from '@angular/router';
 
 import {DashboardComponent} from "./dashboard/dashboard.component";
+import {LoginComponent} from "./login/login.component";
+import {NeedAuthGuard} from "./login/no-auth-guard.service";
 
 
 const appRoutes: Routes = [
@@ -9,9 +11,15 @@ const appRoutes: Routes = [
     {
         path:'heroes',loadChildren:'./heroes/heroes.module#HeroesModule'
     },
-    {   path: 'dashboard', component: DashboardComponent},
+    {   path: 'dashboard', component: DashboardComponent,canActivate:[NeedAuthGuard]},
     {
         path:'relativeRoute',loadChildren:'./relativeroute/relative-route.module#RelativeRouteModule'
+    },
+    {
+        path:'guardRoute',loadChildren:'./guardroute/guard-route.module#GuardRouteModule'
+    },
+    {
+        path:'login',component:LoginComponent
     },
     {
         path: '',

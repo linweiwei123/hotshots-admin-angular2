@@ -14,19 +14,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var common_1 = require("@angular/common");
 var header_component_1 = require("./layout/header/header.component");
+var show_authed_directive_1 = require("./directive/show-authed.directive");
+var user_service_1 = require("./service/user.service");
+var jwt_service_1 = require("./service/jwt.service");
+var forms_1 = require("@angular/forms");
 var SharedModule = (function () {
     function SharedModule() {
     }
     SharedModule = __decorate([
         core_1.NgModule({
             imports: [
-                common_1.CommonModule
+                common_1.CommonModule,
+                forms_1.FormsModule
             ],
             declarations: [
-                header_component_1.HeaderComponent
+                header_component_1.HeaderComponent,
+                show_authed_directive_1.ShowAuthedDirective
+            ],
+            providers: [
+                user_service_1.UserService,
+                jwt_service_1.JwtService
             ],
             exports: [
-                header_component_1.HeaderComponent
+                header_component_1.HeaderComponent,
+                show_authed_directive_1.ShowAuthedDirective
             ]
         }), 
         __metadata('design:paramtypes', [])

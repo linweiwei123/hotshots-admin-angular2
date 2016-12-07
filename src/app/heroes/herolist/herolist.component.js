@@ -12,9 +12,10 @@ var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var hero_service_1 = require("../hero/hero.service");
 var HerolistComponent = (function () {
-    function HerolistComponent(heroService, router) {
+    function HerolistComponent(heroService, router, activatedRoute) {
         this.heroService = heroService;
         this.router = router;
+        this.activatedRoute = activatedRoute;
     }
     HerolistComponent.prototype.getHeroes = function () {
         var _this = this;
@@ -24,10 +25,18 @@ var HerolistComponent = (function () {
         this.selectedHero = hero;
     };
     HerolistComponent.prototype.ngOnInit = function () {
+        //此处可选参数失败，未知原因，还需要解决
+        // this.activatedRoute.params.switchMap((params:Params)=>{
+        //     this.selectId = +params['id'];
+        //     console.log(this.selectId);
+        // });
         this.getHeroes();
     };
     HerolistComponent.prototype.gotoDetail = function () {
-        this.router.navigate(['/detail', this.selectedHero.id]);
+        console.log(this.activatedRoute);
+        //因为本级是第二级的导航，所以要获取上级的url path
+        var parentPath = this.activatedRoute.parent.routeConfig.path;
+        this.router.navigate([("/" + parentPath + "/heroDetail"), this.selectedHero.id]);
     };
     HerolistComponent.prototype.add = function (name) {
         var _this = this;
@@ -57,7 +66,7 @@ var HerolistComponent = (function () {
             templateUrl: 'herolist.component.html',
             styleUrls: ['herolist.component.css']
         }), 
-        __metadata('design:paramtypes', [hero_service_1.HeroService, router_1.Router])
+        __metadata('design:paramtypes', [hero_service_1.HeroService, router_1.Router, router_1.ActivatedRoute])
     ], HerolistComponent);
     return HerolistComponent;
 }());

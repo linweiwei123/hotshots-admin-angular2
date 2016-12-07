@@ -15,7 +15,7 @@ var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var Observable_1 = require('rxjs/Observable');
 var Subject_1 = require('rxjs/Subject');
-var hero_service_1 = require('./hero.service');
+var hero_service_1 = require('../hero/hero.service');
 var HeroSearchComponent = (function () {
     function HeroSearchComponent(heroService, router) {
         this.heroService = heroService;

@@ -12,17 +12,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Created by Administrator on 2016/11/25.
  */
 var core_1 = require('@angular/core');
+var user_service_1 = require("./shared/service/user.service");
 var AppComponent = (function () {
-    function AppComponent() {
+    function AppComponent(userService) {
+        this.userService = userService;
         this.title = '英雄帖';
     }
+    AppComponent.prototype.ngOnInit = function () {
+        this.userService.populate();
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
             templateUrl: 'app.component.html',
             styleUrls: []
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [user_service_1.UserService])
     ], AppComponent);
     return AppComponent;
 }());

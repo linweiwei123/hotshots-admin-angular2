@@ -10,26 +10,32 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
-var hero_detail_component_1 = require("./heroes/herodetail/hero-detail.component");
 var dashboard_component_1 = require("./dashboard/dashboard.component");
 var appRoutes = [
+    {
+        path: 'heroes', loadChildren: './heroes/heroes.module#HeroesModule'
+    },
+    { path: 'dashboard', component: dashboard_component_1.DashboardComponent },
+    {
+        path: 'relativeRoute', loadChildren: './relativeroute/relative-route.module#RelativeRouteModule'
+    },
+    {
+        path: 'guardRoute', loadChildren: './guardroute/guard-route.module#GuardRouteModule'
+    },
+    {
+        path: 'login', loadChildren: './login/login.module#LoginModule'
+    },
     {
         path: '',
         redirectTo: '/dashboard',
         pathMatch: 'full'
     },
-    // { path: 'herolist', loadChildren: () => new Promise(resolve => {
-    //     (require as any).ensure([], (require: any) => {
-    //         resolve(require('./herolist/herolist.module').HerolistModule);
-    //     })
-    // })
+    //angular2 官网的404路由配置有错，通过下面2行修正
     {
-        path: 'herolist', loadChildren: './herolist/herolist.module#HerolistModule'
+        path: 'nofound', loadChildren: './nofound/nofound.module#NoFoundModule'
     },
-    { path: 'dashboard', component: dashboard_component_1.DashboardComponent },
     {
-        path: 'detail/:id',
-        component: hero_detail_component_1.HeroDetailComponent
+        path: '**', redirectTo: '/nofound'
     }
 ];
 var AppRoutingModule = (function () {

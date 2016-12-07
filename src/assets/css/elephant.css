@@ -11780,9 +11780,9 @@ button.collapsed .ellipsis-object {
 @media (min-width:768px) {
     .layout-content {
         margin-left: 220px;
-        -webkit-transition: margin-left .3s;
-        -o-transition: margin-left .3s;
-        transition: margin-left .3s
+        /*-webkit-transition: margin-left .3s;*/
+        /*-o-transition: margin-left .3s;*/
+        /*transition: margin-left .3s*/
     }
 }
 

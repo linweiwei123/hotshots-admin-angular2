@@ -1,0 +1,48 @@
+/*! Custom styles for this template */
+
+html {
+    display: table;
+    height: 100%;
+    width: 100%
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle
+}
+
+.login {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 360px
+}
+
+.login-body {
+    padding: 30px
+}
+
+.login-brand {
+    display: block;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 140px
+}
+
+.login-footer {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    text-align: center
+}
+
+@media (min-width:768px) {
+    .login-body {
+        background-color: #fff;
+        border: 1px solid #f2f5f8;
+        border-radius: 0;
+        -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, .1);
+        box-shadow: 0 0 1px 1px rgba(0, 0, 0, .1);
+        margin-bottom: 15px;
+        margin-top: 15px
+    }
+}

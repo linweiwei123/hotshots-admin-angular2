@@ -15,6 +15,9 @@ import {HeroSearchComponent} from "./heroes/herosearch/hero-search.component";
 import '../assets/css/styles.css';
 import {SharedModule} from "./shared/shared.module";
 import {SidernavComponent} from "./shared/layout/sidernav/sidernav.component";
+import {LoginComponent} from "./login/login.component";
+import {NeedAuthGuard} from "./login/no-auth-guard.service";
+
 
 @NgModule({
     imports: [
@@ -29,9 +32,10 @@ import {SidernavComponent} from "./shared/layout/sidernav/sidernav.component";
         AppComponent,
         DashboardComponent,
         HeroSearchComponent,
-        SidernavComponent
+        SidernavComponent,
+        LoginComponent
     ],
-    providers:[HeroService],
+    providers:[HeroService,NeedAuthGuard],
     bootstrap: [ AppComponent ]
 })
 export class AppModule { }

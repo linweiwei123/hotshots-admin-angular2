@@ -6,6 +6,7 @@ import {RelativeCenterComponent} from "./relative-center.component";
 import {RelativeAComponent} from "./relative-a.component";
 import {RelativeBComponent} from "./relative-b.component";
 import {Routes, RouterModule} from "@angular/router";
+import {NeedAuthGuard} from "../login/no-auth-guard.service";
 
 const relativeRoutes:Routes = [
     {
@@ -20,7 +21,8 @@ const relativeRoutes:Routes = [
                 path:'relativeB',
                 component:RelativeBComponent
             }
-        ]
+        ],
+        canActivate:[NeedAuthGuard]
     }
 ]
 

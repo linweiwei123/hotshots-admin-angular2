@@ -2,3 +2,14 @@
 @import "vendor.css";
 @import "elephant.css";
 @import "application.css";
+
+.single{
+    margin-top: -50px;
+}
+.single .layout-content{
+    margin-left: 0px;
+}
+.single .layout-content-body{
+    position: absolute;
+    top: 20%;
+}

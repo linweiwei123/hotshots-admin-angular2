@@ -1,7 +1,7 @@
-<layout-header></layout-header>
-<div class="layout-main">
-    <layout-sidernav></layout-sidernav>
-    <div class="layout-content">
+<layout-header *showAuthed="true"></layout-header>
+<div class="layout-main" [class.single]="isSingle">
+    <layout-sidernav *showAuthed="true"></layout-sidernav>
+    <div class="layout-content" >
         <div class="layout-content-body">
             <router-outlet></router-outlet>
         </div>

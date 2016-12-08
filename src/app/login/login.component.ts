@@ -13,7 +13,7 @@ import {User} from "../shared/models/user.model";
 
 export class LoginComponent{
 
-    model:any = {};
+    model:any = {username:'',password:''};
     error:string;
 
     constructor(
@@ -24,14 +24,12 @@ export class LoginComponent{
     }
 
     login(){
-        let user = {username:'linweiwei',password:'123'};
-        console.log('进来登陆方法了');
-        let result = this.userService.getAuth(user as User);
+        let result = this.userService.getAuth(this.model as User);
         if(result){
             this.router.navigate(['/dashboard']);
         }
         else {
-            this.error = '账号或者密码错误'
+            this.error = '账号linweiwei，密码123'
         }
     }
 }

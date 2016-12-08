@@ -46,3 +46,32 @@ body {
         margin-top: 15px
     }
 }
+
+.has-error{
+    color: #e74c3c;
+}
+
+button.btn-block{
+    margin-top: 20px;
+}
+
+
+.ng-invalid[required].ng-dirty{
+    border-color: #e74c3c;
+}
+
+.message-error{
+    padding: 5px;
+    text-align: center;
+    background-color:#e74c3c;
+    color: #fff;
+    margin-top: 2px;
+    margin-bottom: 5px;
+
+}
+
+.message-error .fadeout{
+    transition: opacity;
+    transition-timing-function: ease-out;
+    transition-duration: 250ms;
+}

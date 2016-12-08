@@ -3,33 +3,26 @@
         <a class="login-brand" href="index.html" >
             <img class="img-responsive" src="../../assets/img/logo.svg"  alt="Elephant">
         </a>
+        <div class="message-error" [class.fadeout]="error" [hidden]="!error"><span>{{error}}</span></div>
         <div class="login-form">
-            <form data-toggle="validator">
+            <form data-toggle="validator" (ngSubmit)="login()" #loginForm="ngForm">
                 <div class="form-group">
-                    <label for="email">Email</label>
-                    <input id="email" class="form-control" type="email" name="email" spellcheck="false"
-                           autocomplete="off" data-msg-required="Please enter your email address." required>
+                    <label for="username">账号</label>
+                    <input id="username" class="form-control" type="text" name="username" spellcheck="false"
+                           autocomplete="off" [(ngModel)]="model.username" #username="ngModel" required>
+                    <small [hidden]="username.valid||username.pristine" class="has-error help-block">*请输入账号</small>
                 </div>
                 <div class="form-group">
-                    <label for="password">Password</label>
-                    <input id="password" class="form-control" type="password" name="password"
-                           minlength="6" data-msg-minlength="Password must be 6 characters or more."
-                           data-msg-required="Please enter your password." required>
+                    <label for="password">密码</label>
+                    <input id="password" class="form-control" type="password" name="password" [(ngModel)]="model.password" #password="ngModel" required>
+                    <small [hidden]="password.valid||password.pristine" class="has-error help-block">*请输入密码</small>
                 </div>
-                <div class="form-group">
-                    <label class="custom-control custom-control-primary custom-checkbox">
-                        <input class="custom-control-input" type="checkbox" checked="checked">
-                        <span class="custom-control-indicator"></span>
-                        <span class="custom-control-label">Keep me signed in</span>
-                    </label>
-                    <span aria-hidden="true"> · </span>
-                    <a href="password-2.html" >Forgot password?</a>
-                </div>
-                <button class="btn btn-primary btn-block" (click)="login()">登陆</button>
+                <button class="btn btn-primary btn-block" [disabled]="loginForm.form.invalid" type="submit">登陆</button>
             </form>
+
         </div>
     </div>
     <div class="login-footer">
-        Don't have an account? <a href="signup-2.html" >注册</a>
+        没有账号？<a href="signup-2.html" >注册</a>
     </div>
 </div>

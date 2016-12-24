@@ -9,6 +9,7 @@ import {ShowAuthedDirective} from "./directive/show-authed.directive";
 import {UserService} from "./service/user.service";
 import {JwtService} from "./service/jwt.service";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {MessageComponent} from "./common/message/message.component";
 
 @NgModule({
     imports:[
@@ -18,7 +19,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     ],
     declarations:[
         HeaderComponent,
-        ShowAuthedDirective
+        ShowAuthedDirective,
+        MessageComponent
     ],
     providers:[
         UserService,
@@ -26,6 +28,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     ],
     exports:[
         HeaderComponent,
+        MessageComponent,
         ShowAuthedDirective
     ]
 })
